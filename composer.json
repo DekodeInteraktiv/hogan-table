@@ -1,0 +1,23 @@
+{
+  "name": "dekodeinteraktiv/hogan-table",
+  "description": "Table Module for Hogan",
+  "homepage": "https://github.com/dekodeinteraktiv/hogan-table",
+  "type": "wordpress-plugin",
+  "license": "GPL-3.0",
+  "require": {
+    "php": ">=5.5",
+    "composer/installers": "~1.2",
+    "dekodeinteraktiv/hogan-core": "@dev",
+    "johannheyne/advanced-custom-fields-table-field": "^1.2.1"
+  },
+  "archive": {
+    "exclude": [
+      ".editorconfig",
+      ".gitignore",
+      "composer.json",
+      "composer.lock",
+      "LICENSE",
+      "phpcs.xml"
+    ]
+  }
+}
