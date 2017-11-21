@@ -6,7 +6,13 @@
  *
  * @package Hogan
  */
+?>
 
+<?php if ( ! empty( $this->heading ) ) : ?>
+	<h2 class="heading"><?php echo esc_html( $this->heading ); ?></h2>
+<?php endif; ?>
+
+<?php
 if ( ! empty( $this->table_content ) ) :
 
 	echo '<table border="0">';
@@ -19,7 +25,7 @@ if ( ! empty( $this->table_content ) ) :
 
 		foreach ( $this->table_content['header'] as $th ) {
 
-			echo '<th>';
+			echo '<th class="module-bg strong">';
 			echo $th['c'];
 			echo '</th>';
 		}

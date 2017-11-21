@@ -21,6 +21,13 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) ) {
 	class Table extends Module {
 
 		/**
+		 * Table optional heading
+		 *
+		 * @var string $heading
+		 */
+		public $heading;
+
+		/**
 		 * Table content
 		 *
 		 * @var string $table_content
@@ -44,17 +51,20 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) ) {
 		 */
 		public function get_fields() {
 
+			$fields = [];
+
+			// Heading field can be disabled using filter hogan/module/image/heading/enabled (true/false).
+			hogan_append_heading_field( $fields, $this );
+
 			//todo: Check if field type exists?
-			$fields = [
-				[
-					'type'         => 'table',
-					'key'          => $this->field_key . '_table_content', // hogan_module_table_content.
-					'label'        => __( 'Table Content', 'hogan-table' ),
-					'name'         => 'table_content',
-					'instructions' => '',
-					'required'     => 1,
-					'use_header'   => 0,
-				],
+			$fields[] = [
+				'type'         => 'table',
+				'key'          => $this->field_key . '_table_content', // hogan_module_table_content.
+				'label'        => __( 'Table Content', 'hogan-table' ),
+				'name'         => 'table_content',
+				'instructions' => '',
+				'required'     => 1,
+				'use_header'   => 0,
 			];
 
 			return $fields;
@@ -66,6 +76,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) ) {
 		 * @param array $content The content value.
 		 */
 		public function load_args_from_layout_content( $content ) {
+			$this->heading = $content['heading'] ?? null;
 			$this->table_content = $content['table_content'] ?? null;
 
 			parent::load_args_from_layout_content( $content );
@@ -75,7 +86,8 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) ) {
 		/**
 		 * Validate module content before template is loaded.
 		 */
-		public function validate_args() {
+		public
+		function validate_args() {
 			return ! empty( $this->table_content );
 		}
 	}
