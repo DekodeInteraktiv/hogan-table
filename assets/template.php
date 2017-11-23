@@ -15,7 +15,7 @@
 <?php
 if ( ! empty( $this->table_content ) ) :
 
-	echo '<table border="0">';
+	echo '<table>';
 
 	if ( $this->table_content['header'] ) {
 
@@ -25,7 +25,7 @@ if ( ! empty( $this->table_content ) ) :
 
 		foreach ( $this->table_content['header'] as $th ) {
 
-			echo '<th class="module-bg strong">';
+			echo '<th>';
 			echo $th['c'];
 			echo '</th>';
 		}

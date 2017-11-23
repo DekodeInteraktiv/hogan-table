@@ -3,7 +3,7 @@
  * Plugin Name: Hogan Module: Table
  * Plugin URI: https://github.com/dekodeinteraktiv/hogan-table
  * Description: Table Module for Hogan.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Dekode
  * Author URI: https://dekode.no
  * License: GPL-3.0
