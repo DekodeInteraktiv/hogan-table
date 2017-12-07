@@ -5,13 +5,14 @@
  * @package Hogan
  */
 
+declare( strict_types = 1 );
 namespace Dekode\Hogan;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) ) {
+if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) && class_exists( '\\Dekode\\Hogan\\Module' ) ) {
 
 	/**
 	 * Table module class.
@@ -21,19 +22,11 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) ) {
 	class Table extends Module {
 
 		/**
-		 * Table optional heading
+		 * Table content.
 		 *
-		 * @var string $heading
-		 */
-		public $heading;
-
-		/**
-		 * Table content
-		 *
-		 * @var string $table_content
+		 * @var array $table_content
 		 */
 		public $table_content;
-
 
 		/**
 		 * Module constructor.
@@ -48,15 +41,16 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) ) {
 
 		/**
 		 * Field definitions for module.
+		 *
+		 * @return array $fields Fields for this module
 		 */
-		public function get_fields() {
+		public function get_fields() : array {
 
 			$fields = [];
 
 			// Heading field can be disabled using filter hogan/module/image/heading/enabled (true/false).
 			hogan_append_heading_field( $fields, $this );
 
-			//todo: Check if field type exists?
 			$fields[] = [
 				'type'         => 'table',
 				'key'          => $this->field_key . '_table_content', // hogan_module_table_content.
@@ -71,23 +65,25 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) ) {
 		}
 
 		/**
-		 * Map fields to object variable.
+		 * Map raw fields from acf to object variable.
 		 *
-		 * @param array $content The content value.
+		 * @param array $raw_content Content values.
+		 * @param int   $counter Module location in page layout.
+		 * @return void
 		 */
-		public function load_args_from_layout_content( $content ) {
-			$this->heading = $content['heading'] ?? null;
-			$this->table_content = $content['table_content'] ?? null;
+		public function load_args_from_layout_content( array $raw_content, int $counter = 0 ) {
 
-			parent::load_args_from_layout_content( $content );
+			$this->table_content = $raw_content['table_content'] ?? null;
 
+			parent::load_args_from_layout_content( $raw_content, $counter );
 		}
 
 		/**
 		 * Validate module content before template is loaded.
+		 *
+		 * @return bool Whether validation of the module is successful / filled with content.
 		 */
-		public
-		function validate_args() {
+		public function validate_args() : bool {
 			return ! empty( $this->table_content );
 		}
 	}

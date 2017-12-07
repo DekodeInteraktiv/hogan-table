@@ -2,8 +2,9 @@
 /**
  * Plugin Name: Hogan Module: Table
  * Plugin URI: https://github.com/dekodeinteraktiv/hogan-table
+ * GitHub Plugin URI: https://github.com/dekodeinteraktiv/hogan-table
  * Description: Table Module for Hogan.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Dekode
  * Author URI: https://dekode.no
  * License: GPL-3.0
@@ -16,6 +17,7 @@
  * @author Dekode
  */
 
+declare( strict_types = 1 );
 namespace Dekode\Hogan\Table;
 
 if ( ! defined( 'ABSPATH' ) ) {
