@@ -56,7 +56,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) && class_exists( '\\Dekode\\Hoga
 				'key'          => $this->field_key . '_table_content', // hogan_module_table_content.
 				'label'        => __( 'Table Content', 'hogan-table' ),
 				'name'         => 'table_content',
-				'instructions' => '',
+				'instructions' => __('Choose optional table header, drag and drop columns and rows to change order, use tab to move to the next and previous columns.', 'hogan-table'),
 				'required'     => 1,
 				'use_header'   => 0,
 			];
