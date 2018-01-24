@@ -4,10 +4,10 @@
  * Plugin URI: https://github.com/dekodeinteraktiv/hogan-table
  * GitHub Plugin URI: https://github.com/dekodeinteraktiv/hogan-table
  * Description: Table Module for Hogan.
- * Version: 1.0.7
+ * Version: 1.0.8
  * Author: Dekode
  * Author URI: https://dekode.no
- * License: GPL-3.0
+ * License: GPL-3.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
  *
  * Text Domain: hogan-table

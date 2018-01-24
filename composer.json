@@ -3,12 +3,18 @@
   "description": "Table Module for Hogan",
   "homepage": "https://github.com/dekodeinteraktiv/hogan-table",
   "type": "wordpress-plugin",
-  "license": "GPL-3.0",
+  "license": "GPL-3.0-or-later",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
   "require": {
-    "php": ">=5.5",
+    "php": ">=7.0",
     "composer/installers": "~1.2",
-    "dekodeinteraktiv/hogan-core": "^1.0",
-    "johannheyne/advanced-custom-fields-table-field": "^1.2.1"
+    "dekodeinteraktiv/hogan-core": "^1.0.4",
+    "wpackagist-plugin/advanced-custom-fields-table-field": "^1.2"
   },
   "archive": {
     "exclude": [
