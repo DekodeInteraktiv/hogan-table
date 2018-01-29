@@ -24,45 +24,38 @@ if ( ! defined( 'ABSPATH' ) || ! ( $this instanceof Table ) ) {
 <?php endif; ?>
 
 	<?php
-if ( ! empty( $this->table_content ) ) :
+if ( ! empty( $this->table_content ) ) {
 
 	echo '<table>';
 
 	if ( $this->table_content['header'] ) {
-
 		echo '<thead>';
-
 		echo '<tr>';
 
 		foreach ( $this->table_content['header'] as $th ) {
-
-			echo '<th>';
-			echo $th['c'];
-			echo '</th>';
+			printf( '<th>%s</th>',
+				wp_kses( $th['c'], $this->content_allowed_html )
+			);
 		}
 
 		echo '</tr>';
-
 		echo '</thead>';
 	}
 
 	echo '<tbody>';
 
 	foreach ( $this->table_content['body'] as $tr ) {
-
 		echo '<tr>';
 
 		foreach ( $tr as $td ) {
-
-			echo '<td>';
-			echo $td['c'];
-			echo '</td>';
+			printf( '<td>%s</td>',
+				wp_kses( $td['c'], $this->content_allowed_html )
+			);
 		}
 
 		echo '</tr>';
 	}
 
 	echo '</tbody>';
-
 	echo '</table>';
-endif;
+}

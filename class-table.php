@@ -29,6 +29,13 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) && class_exists( '\\Dekode\\Hoga
 		public $table_content;
 
 		/**
+		 * Allowed HTML for table cell content.
+		 *
+		 * @var array $content_allowed_html
+		 */
+		public $content_allowed_html;
+
+		/**
 		 * Module constructor.
 		 */
 		public function __construct() {
@@ -74,6 +81,12 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) && class_exists( '\\Dekode\\Hoga
 		public function load_args_from_layout_content( array $raw_content, int $counter = 0 ) {
 
 			$this->table_content = $raw_content['table_content'] ?? null;
+
+			$this->content_allowed_html = apply_filters( 'hogan/module/table/content/allowed_html', [
+				'br'     => [],
+				'p'      => [],
+				'strong' => [],
+			] );
 
 			parent::load_args_from_layout_content( $raw_content, $counter );
 		}
