@@ -13,7 +13,7 @@
   "require": {
     "php": ">=7.0",
     "composer/installers": "~1.2",
-    "dekodeinteraktiv/hogan-core": "^1.0.4",
+    "dekodeinteraktiv/hogan-core": "^1.0.14",
     "wpackagist-plugin/advanced-custom-fields-table-field": "^1.2"
   },
   "archive": {
