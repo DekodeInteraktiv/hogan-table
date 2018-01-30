@@ -20,6 +20,7 @@
     "exclude": [
       ".editorconfig",
       ".gitignore",
+      ".travis.yml",
       "composer.json",
       "composer.lock",
       "LICENSE",
