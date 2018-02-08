@@ -11,7 +11,8 @@
  * @package Hogan
  */
 
-declare( strict_types=1 );
+declare( strict_types = 1 );
+
 namespace Dekode\Hogan;
 
 if ( ! defined( 'ABSPATH' ) || ! ( $this instanceof Table ) ) {
@@ -34,7 +35,7 @@ if ( ! empty( $this->table_content ) ) {
 
 		foreach ( $this->table_content['header'] as $th ) {
 			printf( '<th>%s</th>',
-				wp_kses( $th['c'], $this->content_allowed_html )
+				wp_kses( apply_filters( 'hogan/module/table/content/table_header', $th['c'] ), $this->content_allowed_html )
 			);
 		}
 
@@ -49,7 +50,7 @@ if ( ! empty( $this->table_content ) ) {
 
 		foreach ( $tr as $td ) {
 			printf( '<td>%s</td>',
-				wp_kses( $td['c'], $this->content_allowed_html )
+				wp_kses( apply_filters( 'hogan/module/table/content/table_data', $td['c'] ), $this->content_allowed_html )
 			);
 		}
 
