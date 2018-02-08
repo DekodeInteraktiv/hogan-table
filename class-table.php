@@ -6,6 +6,7 @@
  */
 
 declare( strict_types = 1 );
+
 namespace Dekode\Hogan;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -51,7 +52,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) && class_exists( '\\Dekode\\Hoga
 		 *
 		 * @return array $fields Fields for this module
 		 */
-		public function get_fields() : array {
+		public function get_fields(): array {
 
 			$fields = [];
 
@@ -63,7 +64,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) && class_exists( '\\Dekode\\Hoga
 				'key'          => $this->field_key . '_table_content', // hogan_module_table_content.
 				'label'        => __( 'Table Content', 'hogan-table' ),
 				'name'         => 'table_content',
-				'instructions' => __( 'Choose optional table header, drag and drop columns and rows to change order, use tab to move to the next and previous columns.', 'hogan-table' ),
+				'instructions' => apply_filters( 'hogan/module/table/instructions', __( 'Choose optional table header, drag and drop columns and rows to change order, use tab to move to the next and previous columns.', 'hogan-table' ) ),
 				'required'     => 1,
 				'use_header'   => 0,
 			];
@@ -76,6 +77,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) && class_exists( '\\Dekode\\Hoga
 		 *
 		 * @param array $raw_content Content values.
 		 * @param int   $counter Module location in page layout.
+		 *
 		 * @return void
 		 */
 		public function load_args_from_layout_content( array $raw_content, int $counter = 0 ) {
@@ -96,7 +98,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) && class_exists( '\\Dekode\\Hoga
 		 *
 		 * @return bool Whether validation of the module is successful / filled with content.
 		 */
-		public function validate_args() : bool {
+		public function validate_args(): bool {
 			return ! empty( $this->table_content );
 		}
 	}

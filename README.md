@@ -4,4 +4,7 @@
 Install the module using Composer `composer require dekodeinteraktiv/hogan-table` or simply by downloading this repository and placing it in `wp-content/plugins`
 
 ## Available filters
+- `hogan/module/table/instructions` for changing the admin instructions.
 - `hogan/module/table/content/allowed_html` for allowed table cell HTML.
+- `hogan/module/table/content/table_header` for changing the table header value.
+- `hogan/module/table/content/table_data` for changing the table data value.
