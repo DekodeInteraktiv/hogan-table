@@ -5,7 +5,6 @@
  * $this is an instance of the Table object.
  *
  * Available properties:
- * $this->heading (string) Module heading.
  * $this->table_content (array) Table data.
  *
  * @package Hogan
