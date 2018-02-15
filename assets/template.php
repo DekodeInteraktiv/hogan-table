@@ -19,12 +19,6 @@ if ( ! defined( 'ABSPATH' ) || ! ( $this instanceof Table ) ) {
 	return; // Exit if accessed directly.
 }
 
-if ( ! empty( $this->heading ) ) {
-	hogan_component( 'heading', [
-		'title' => $this->heading,
-	] );
-}
-
 if ( ! empty( $this->table_content ) ) {
 
 	echo '<table>';

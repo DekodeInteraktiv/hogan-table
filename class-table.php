@@ -56,9 +56,6 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) && class_exists( '\\Dekode\\Hoga
 
 			$fields = [];
 
-			// Heading field can be disabled using filter hogan/module/image/heading/enabled (true/false).
-			hogan_append_heading_field( $fields, $this );
-
 			$fields[] = [
 				'type'         => 'table',
 				'key'          => $this->field_key . '_table_content', // hogan_module_table_content.
