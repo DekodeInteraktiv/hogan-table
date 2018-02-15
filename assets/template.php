@@ -5,7 +5,6 @@
  * $this is an instance of the Table object.
  *
  * Available properties:
- * $this->heading (string) Module heading.
  * $this->table_content (array) Table data.
  *
  * @package Hogan
@@ -17,12 +16,6 @@ namespace Dekode\Hogan;
 
 if ( ! defined( 'ABSPATH' ) || ! ( $this instanceof Table ) ) {
 	return; // Exit if accessed directly.
-}
-
-if ( ! empty( $this->heading ) ) {
-	hogan_component( 'heading', [
-		'title' => $this->heading,
-	] );
 }
 
 if ( ! empty( $this->table_content ) ) {
