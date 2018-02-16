@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "038752bb57d2149863773d5b23ea884a",
+    "content-hash": "de87ae26d0968d7263743d37e6de3fce",
     "packages": [
         {
             "name": "composer/installers",
@@ -128,16 +128,16 @@
         },
         {
             "name": "dekodeinteraktiv/hogan-core",
-            "version": "1.0.14",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/DekodeInteraktiv/hogan-core.git",
-                "reference": "1e566e3ae07413686b36806c8b02acf8de054c4b"
+                "reference": "a2436d2a3132420588867451cd36dc14708dc117"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DekodeInteraktiv/hogan-core/zipball/1e566e3ae07413686b36806c8b02acf8de054c4b",
-                "reference": "1e566e3ae07413686b36806c8b02acf8de054c4b",
+                "url": "https://api.github.com/repos/DekodeInteraktiv/hogan-core/zipball/a2436d2a3132420588867451cd36dc14708dc117",
+                "reference": "a2436d2a3132420588867451cd36dc14708dc117",
                 "shasum": ""
             },
             "require": {
@@ -151,7 +151,7 @@
             ],
             "description": "Modular Flexible Content System for ACF Pro",
             "homepage": "https://github.com/DekodeInteraktiv/hogan-core",
-            "time": "2018-01-24T11:39:12+00:00"
+            "time": "2018-02-15T10:22:00+00:00"
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields-table-field",
@@ -181,7 +181,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.5"
+        "php": ">=7.0"
     },
     "platform-dev": []
 }
