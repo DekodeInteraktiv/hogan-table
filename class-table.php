@@ -52,7 +52,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) && class_exists( '\\Dekode\\Hoga
 		 *
 		 * @return array $fields Fields for this module
 		 */
-		public function get_fields(): array {
+		public function get_fields() : array {
 
 			$fields = [];
 
@@ -81,11 +81,13 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) && class_exists( '\\Dekode\\Hoga
 
 			$this->table_content = $raw_content['table_content'] ?? null;
 
-			$this->content_allowed_html = apply_filters( 'hogan/module/table/content/allowed_html', [
-				'br'     => [],
-				'p'      => [],
-				'strong' => [],
-			] );
+			$this->content_allowed_html = apply_filters(
+				'hogan/module/table/content/allowed_html', [
+					'br'     => [],
+					'p'      => [],
+					'strong' => [],
+				]
+			);
 
 			parent::load_args_from_layout_content( $raw_content, $counter );
 		}
@@ -95,8 +97,8 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) && class_exists( '\\Dekode\\Hoga
 		 *
 		 * @return bool Whether validation of the module is successful / filled with content.
 		 */
-		public function validate_args(): bool {
+		public function validate_args() : bool {
 			return ! empty( $this->table_content );
 		}
 	}
-} // End if().
+}
