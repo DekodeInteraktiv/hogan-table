@@ -81,11 +81,13 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) && class_exists( '\\Dekode\\Hoga
 
 			$this->table_content = $raw_content['table_content'] ?? null;
 
-			$this->content_allowed_html = apply_filters( 'hogan/module/table/content/allowed_html', [
-				'br'     => [],
-				'p'      => [],
-				'strong' => [],
-			] );
+			$this->content_allowed_html = apply_filters(
+				'hogan/module/table/content/allowed_html', [
+					'br'     => [],
+					'p'      => [],
+					'strong' => [],
+				]
+			);
 
 			parent::load_args_from_layout_content( $raw_content, $counter );
 		}
@@ -99,4 +101,4 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Table' ) && class_exists( '\\Dekode\\Hoga
 			return ! empty( $this->table_content );
 		}
 	}
-} // End if().
+}
